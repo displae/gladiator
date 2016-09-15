@@ -35,6 +35,6 @@ func ValidatePhoneCountryCode(phoneCountryCode string) bool {
 // Password must contains 8 characters minimal and must have
 // mix caps and number
 func ValidatePassword(password string) bool {
-	matched, _ := regexp.MatchString("[0-9]", password)
+	matched, _ := regexp.MatchString("((?=.*\\d)(?=.*[a-z])(?=.*[A-Z])).{8,}", password)
 	return matched
 }
